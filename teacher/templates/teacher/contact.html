@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+  </ul>
+
+    <form action="{% url 'contact_form' %}" method="post">
+      {% csrf_token %}
+
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" placeholder="name"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" placeholder="surname"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="email"><br>
+      <label for="mobile">Mobile Number:</label><br>
+      <input type="text" id="mobile" name="mobile" placeholder="mobile"><br>
+
+
+      <button type="submit" >Submit</button>
+    </form>
+  </body>
+</html>
